@@ -1,0 +1,45 @@
+# How to detect unfollowers
+
+⚠️ The following steps are for macOS, but the steps for Windows are not very different.
+
+## Prepare
+Install [Deno](https://deno.com/).
+
+## Download the HTML of your following
+1. Open the list of your following on Duolingo in Google Chrome.
+1. Click the "Load More" button, if it exists, at the end of the list.
+1. Open [Chrome DevTools](https://developer.chrome.com/docs/devtools).
+1. Copy everything from `<html>` up to and including `</html>`.
+1. Run the following command in Terminal.
+   ```shell
+   pbpaste > ~/Desktop/following.html
+   ```
+
+## Download the HTML of your followers
+1. Open the list of your followers on Duolingo in Google Chrome.
+1. Click the "Load More" button, if it exists, at the end of the list.
+1. Open [Chrome DevTools](https://developer.chrome.com/docs/devtools).
+1. Copy everything from `<html>` up to and including `</html>`.
+1. Run the following command in Terminal.
+   ```shell
+   pbpaste > ~/Desktop/followers.html
+   ```
+
+## Find a difference between your following and followers.
+Run the following commands in Terminal.
+```shell
+cd <directory-where-this-README-exists>
+
+# Converts `following.html` to `following.txt`, which contains only usernames.
+deno run --allow-env --allow-net --allow-read --allow-write main.ts following.html following.txt
+
+# Converts `followers.html` to `followers.txt`, which contains only usernames.
+deno run --allow-env --allow-net --allow-read --allow-write main.ts followers.html followers.txt
+
+# Prints usernames that are only found in either `following.txt` or `followers.txt`.
+cd ~/Desktop
+diff following.txt followers.txt
+
+# Cleans up.
+rm followers.html followers.txt following.html following.txt
+```
