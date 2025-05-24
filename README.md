@@ -6,18 +6,18 @@
 Install [Deno](https://deno.com/).
 
 ## Download the HTML of your following
-1. Open the list of your following on Duolingo in Google Chrome.
-1. Click the "Load More" button, if it exists, at the end of the list.
+1. Open `https://www.duolingo.com/profile/<your-username>` in Chrome.
+1. If it exists, click the "Load More" button at the end of the list.
 1. Open [Chrome DevTools](https://developer.chrome.com/docs/devtools).
-1. Copy everything from `<html>` up to and including `</html>`.
+1. Copy the source code from `<html>` to `</html>`, inclusively.
 1. Run the following command in Terminal.
    ```shell
    pbpaste > ~/Desktop/following.html
    ```
 
 ## Download the HTML of your followers
-1. Open the list of your followers on Duolingo in Google Chrome.
-1. Click the "Load More" button, if it exists, at the end of the list.
+1. Open `https://www.duolingo.com/profile/<your-username>` in Chrome.
+1. If it exists, click the "Load More" button at the end of the list.
 1. Open [Chrome DevTools](https://developer.chrome.com/docs/devtools).
 1. Copy everything from `<html>` up to and including `</html>`.
 1. Run the following command in Terminal.
