@@ -8,22 +8,14 @@ Install [Deno](https://deno.com/).
 ## Download the HTML of your following
 1. Open `https://www.duolingo.com/profile/<your-username>` in Chrome.
 1. If it exists, click the "Load More" button at the end of the list.
-1. Open [Chrome DevTools](https://developer.chrome.com/docs/devtools).
-1. Copy the source code from `<html>` to `</html>`, inclusively.
-1. Run the following command in Terminal.
-   ```shell
-   pbpaste > ~/Desktop/following.html
-   ```
+1. Copy `<html>...</html>` using [Chrome DevTools](https://developer.chrome.com/docs/devtools/accessibility/navigation#outerhtml).
+1. Run `pbpaste > ~/Desktop/following.html` in Terminal.
 
 ## Download the HTML of your followers
 1. Open `https://www.duolingo.com/profile/<your-username>` in Chrome.
 1. If it exists, click the "Load More" button at the end of the list.
-1. Open [Chrome DevTools](https://developer.chrome.com/docs/devtools).
-1. Copy everything from `<html>` up to and including `</html>`.
-1. Run the following command in Terminal.
-   ```shell
-   pbpaste > ~/Desktop/followers.html
-   ```
+1. Copy `<html>...</html>` using [Chrome DevTools](https://developer.chrome.com/docs/devtools/accessibility/navigation#outerhtml).
+1. Run `pbpaste > ~/Desktop/followers.html` in Terminal.
 
 ## Find a difference between your following and followers.
 Run the following commands in Terminal.
